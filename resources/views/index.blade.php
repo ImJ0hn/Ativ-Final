@@ -54,7 +54,16 @@
                         <p>E-mail: {{$contato->email}}</p>
                     </p>
                 </div>
-                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                <div class="card-footer">
+                <button type="button" class="btn btn-primary">Editar</button>
+                <form method="post" action="{{ route('deletarContato.destroy', ['id' => $contato->id]) }}">
+
+                @csrf
+                @method('delete')
+
+                <button type="submit" class="btn btn-danger">Excluir</button>
+                </form>
+                </div>
             </div>
         </div>
 
@@ -62,7 +71,6 @@
     
     </div>
             
-
             
         </div>
         <!-- Footer-->
@@ -81,6 +89,10 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar contato</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+
+
+
+
 
       <form method="POST" action="{{route('cadastrarContato')}}">
       <div class="modal-body">

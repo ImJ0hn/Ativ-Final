@@ -23,4 +23,9 @@ Route::post('/cadastrarContato', [ControllerContatos::class, 'CadastrarContato']
 // Mostrar as informações.
 Route::get('/', [ControllerContatos::class, 'MostrarContatos']);
 
+Route::get('/contatos/{id}', [ControllerContatos::class, 'EditarContato'])->name('editarContato');
+
+//Deletar contato.
+Route::delete('/contatos/{id}', [ControllerContatos::class, 'DeletarContato'])->name('deletarContato.destroy');
+
 
