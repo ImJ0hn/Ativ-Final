@@ -11,15 +11,14 @@ class ControllerContatos extends Controller
 
         $validarDados = $request->validate(['nome' => 'required', 'telefone'  => 'required', 'email'  => 'required']);
 
-        
-
         $novoContato = ModelContatos::create([
             'nome' => $request->input('nome'),
             'telefone' => $request->input('telefone'),
             'email' => $request->input('email'),
+
         ]);
         
-        
+        return redirect('/');
         
     }
 

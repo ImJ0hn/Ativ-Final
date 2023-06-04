@@ -104,18 +104,7 @@
                         <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-5">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h2 class="card-title">Silvio Florentino</h2>
-                            <p class="card-text">
-                                <p>Fone: 9393939393</p>
-                                <p>E-mail: silvioflorentio@yahoo.ocm.br</p>
-                            </p>
-                        </div>
-                        <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
-                    </div>
-                </div>
+                
             </div>
         </div>
         <!-- Footer-->
