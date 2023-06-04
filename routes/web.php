@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControllerContatos;
 
@@ -16,4 +17,10 @@ use App\Http\Controllers\ControllerContatos;
 
 Route::view('/', 'index');
 
+// Cadastra um contato novo.
 Route::post('/cadastrarContato', [ControllerContatos::class, 'CadastrarContato'])->name('cadastrarContato');
+
+// Mostrar as informações.
+Route::get('/', [ControllerContatos::class, 'MostrarContatos']);
+
+

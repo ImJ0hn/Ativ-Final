@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\ModelContatos;
+use App\Models\ModelContato;
 use Illuminate\Http\Request;
 
 class ControllerContatos extends Controller
@@ -11,7 +11,7 @@ class ControllerContatos extends Controller
 
         $validarDados = $request->validate(['nome' => 'required', 'telefone'  => 'required', 'email'  => 'required']);
 
-        $novoContato = ModelContatos::create([
+        $novoContato = ModelContato::create([
             'nome' => $request->input('nome'),
             'telefone' => $request->input('telefone'),
             'email' => $request->input('email'),
@@ -22,17 +22,12 @@ class ControllerContatos extends Controller
         
     }
 
+    public function MostrarContatos(){
+        $contatos = ModelContato::all();
 
-    // function CadastrarContato(Request $request){
+        return view('index', compact('contatos'));
+    }
 
-    //     $modelCont = new ModelContatos();
-    //     $modelCont->nome = $request->input('Nome');
-    //     $modelCont->email = $request->input('E-mail');
-    //     $modelCont->telefone = $request->input('Telefone');
     
-    //     $modelCont->save();
-
-    //     return view('index');
-    // }
 
 }
