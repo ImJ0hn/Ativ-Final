@@ -3,6 +3,7 @@
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControllerContatos;
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,12 @@ Route::post('/cadastrarContato', [ControllerContatos::class, 'CadastrarContato']
 // Mostrar as informações.
 Route::get('/', [ControllerContatos::class, 'MostrarContatos']);
 
-Route::get('/contatos/{id}', [ControllerContatos::class, 'EditarContato'])->name('editarContato');
+// Route::get('/contatos/{id}', [ControllerContatos::class, 'EditarContatos'])->middleware('auth');
+
+Route::get('/contato/{id}',[ControllerContatos::class,'MostrarContato'])->name('mostrarContato');
+
+Route::put('/contatos/{id}', 'ContatoController@update')->name('contatos.update');
+
 
 //Deletar contato.
 Route::delete('/contatos/{id}', [ControllerContatos::class, 'DeletarContato'])->name('deletarContato.destroy');

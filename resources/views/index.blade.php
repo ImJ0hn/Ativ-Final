@@ -55,7 +55,12 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                <button type="button" class="btn btn-primary">Editar</button>
+
+
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalEdit{{$contato->id}}">Editar</button>
+                @include('modal.modalEdit')
+
+
                 <form method="post" action="{{ route('deletarContato.destroy', ['id' => $contato->id]) }}">
 
                 @csrf
@@ -89,10 +94,6 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar contato</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-
-
-
-
 
       <form method="POST" action="{{route('cadastrarContato')}}">
       <div class="modal-body">

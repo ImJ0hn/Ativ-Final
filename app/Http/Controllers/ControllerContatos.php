@@ -29,13 +29,8 @@ class ControllerContatos extends Controller
         return view('index', compact('contatos'));
     }
 
-    public function EditarContato($id){
-
-        $editarContato = ModelContato::find($id);
-
-        return redirect('/' , compact('editarContato'));
-
-    }
+    
+    
 
     public function DeletarContato($id){
 
