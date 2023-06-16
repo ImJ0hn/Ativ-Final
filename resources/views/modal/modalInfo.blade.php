@@ -18,6 +18,24 @@
           </div>
 
           <div class="mb-3">
+            
+            <label for="InputNome" class="col-form-label">CPF:</label>
+            <input type="text" readonly class="form-control" id="InputCpf" name="cpf" value="{{$contato->cpf}}" required>
+          </div>
+
+          <div class="mb-3">
+            
+            <label for="InputNome" class="col-form-label">Endereço:</label>
+            <input type="text" readonly class="form-control" id="InputEndereco" name="endereco" value="{{$contato->endereco}}" required>
+          </div>
+
+          <div class="mb-3">
+            
+            <label for="InputNome" class="col-form-label">Data de nascimento:</label>
+            <input type="text" readonly class="form-control" id="InputDtnasc" name="dtnasc" value="{{$contato->dtnasc}}" required>
+          </div>
+
+          <div class="mb-3">
             <label for="InputTelefone" class="col-form-label">Telefone:</label>
             <input type="text" readonly class="form-control" id="InputTelefone" name="telefone" value="{{$contato->telefone}}" required>
           </div>

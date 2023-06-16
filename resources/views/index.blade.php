@@ -113,6 +113,21 @@
                         </div>
 
                         <div class="mb-3">
+                            <label for="InputNome" class="col-form-label">CPF:</label>
+                            <input type="text" class="form-control" id="InputCpf" name="cpf" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="InputNome" class="col-form-label">Endereço:</label>
+                            <input type="text" class="form-control" id="InputEndereco" name="endereco" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="InputNome" class="col-form-label">Nome:</label>
+                            <input type="date" class="form-control" id="InputDtnasc" name="dtnasc" required>
+                        </div>
+
+                        <div class="mb-3">
                             <label for="InputTelefone" class="col-form-label">Telefone:</label>
                             <input type="text" class="form-control" id="InputTelefone" name="telefone" required>
                         </div>

@@ -11,5 +11,5 @@ class ModelContato extends Model
     use HasFactory;
 
     protected $table = 'Contatos';
-    protected $fillable = ['nome' , 'email', 'telefone'];
+    protected $fillable = ['nome' , 'cpf', 'endereco', 'dtnasc', 'email', 'telefone'];
 }

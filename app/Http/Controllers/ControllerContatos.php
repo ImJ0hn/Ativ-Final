@@ -11,10 +11,13 @@ class ControllerContatos extends Controller
 
     public function CadastrarContato(Request $request){
 
-        $validarDados = $request->validate(['nome' => 'required', 'telefone'  => 'required', 'email'  => 'required']);
+        $validarDados = $request->validate(['nome' => 'required', 'cpf' => 'required', 'endereco' => 'required', 'dtnasc' => 'required', 'telefone'  => 'required', 'email'  => 'required']);
 
         $novoContato = ModelContato::create([
             'nome' => $request->input('nome'),
+            'cpf' => $request->input('cpf'),
+            'endereco' => $request->input('endereco'),
+            'dtnasc' => $request->input('dtnasc'),
             'telefone' => $request->input('telefone'),
             'email' => $request->input('email'),
 
@@ -34,6 +37,9 @@ class ControllerContatos extends Controller
     public function AlterarContato(ModelContato $salvarAlteracoes, Request $request){
         $dadosAlterados = $request->validate([
             'nome' => 'string|required',
+            'cpf' => 'date|required',
+            'endereco' => 'string|required',
+            'dtnasc' => 'string|required',
             'telefone' => 'string|required',
             'email' => 'email|required'
         ]);
