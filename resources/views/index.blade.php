@@ -65,15 +65,11 @@
                         @include('modal.modalEdit')
                         
                         <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#ModalInfo{{$contato->id}}">Info</button>
-                        @include('modal.modalInfo')
+                        @include('modal.modalInfo')            
 
-                        <form method="post" action="{{ route('deletarContato.destroy', ['id' => $contato->id]) }}">
+                        <button type="submit" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#modalExcluir{{$contato->id}}">Excluir</button>
+                        @include('modal.modalDelete')
 
-                            @csrf
-                            @method('delete')
-
-                            <button type="submit" class="btn btn-danger">Excluir</button>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -123,7 +119,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="InputNome" class="col-form-label">Nome:</label>
+                            <label for="InputNome" class="col-form-label">Data de nascimento:</label>
                             <input type="date" class="form-control" id="InputDtnasc" name="dtnasc" required>
                         </div>
 

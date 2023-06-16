@@ -36,12 +36,12 @@ class ControllerContatos extends Controller
     
     public function AlterarContato(ModelContato $salvarAlteracoes, Request $request){
         $dadosAlterados = $request->validate([
-            'nome' => 'string|required',
-            'cpf' => 'date|required',
-            'endereco' => 'string|required',
-            'dtnasc' => 'string|required',
-            'telefone' => 'string|required',
-            'email' => 'email|required'
+            'nome' => 'string',
+            'cpf' => 'string',
+            'endereco' => 'string',
+            'dtnasc' => 'string',
+            'telefone' => 'string',
+            'email' => 'email'
         ]);
 
         $salvarAlteracoes->fill($dadosAlterados);
