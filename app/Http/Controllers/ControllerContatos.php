@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\ModelContato;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class ControllerContatos extends Controller
 {
@@ -30,7 +31,19 @@ class ControllerContatos extends Controller
     }
 
     
-    
+    public function AlterarContato(ModelContato $salvarAlteracoes, Request $request){
+        $dadosAlterados = $request->validate([
+            'nome' => 'string|required',
+            'telefone' => 'string|required',
+            'email' => 'email|required'
+        ]);
+
+        $salvarAlteracoes->fill($dadosAlterados);
+        $salvarAlteracoes->save();
+
+        return Redirect('/');
+    }
+
 
     public function DeletarContato($id){
 

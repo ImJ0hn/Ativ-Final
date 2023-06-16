@@ -28,8 +28,7 @@ Route::get('/', [ControllerContatos::class, 'MostrarContatos']);
 
 Route::get('/contato/{id}',[ControllerContatos::class,'MostrarContato'])->name('mostrarContato');
 
-Route::put('/contatos/{id}', 'ContatoController@update')->name('contatos.update');
-
+Route::put('/alterarContato/{salvarAlteracoes}', [ControllerContatos::class,'AlterarContato'])->name('alterar-banco-contato');
 
 //Deletar contato.
 Route::delete('/contatos/{id}', [ControllerContatos::class, 'DeletarContato'])->name('deletarContato.destroy');
